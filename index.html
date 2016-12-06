@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>toRoute</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/main.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="appController">      
+<!--Start-Side-Nav-->  
+
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>     
+  <a href="#">Contact</a>
+</div>
+<!--End-Side-Nav-->  
+<!--Start-SignIn-Login-Model--> 
+<div class="sign-login-popup" id="popup">
+    <div class="sign-login-popup__box" id="box">
+      <a href="#" class="closebtn" onclick="closePopup()">&times;</a>
+       <p class="sign-login-popup__box__description">Sign-Login Goes Here</p>
+    </div>
+</div> 
+<!--End-SignIn-Login-Model-->  
+<header class="header">     
+   <a href="#" class="header__nav-btn" onclick="openNav()">
+       <img src="images/nav-btn.png" class="header__nav-btn__img"/>
+    </a>
+   <a href="#" class="header__search-btn">
+        <img src="images/menu-search-btn.png" class="header__search-btn__img"/>
+   </a>
+   <img src="images/logo.png" class="header__logo animated rotateIn wow"/>
+   <div class="header__login">
+       <a href="#" class="header__login__sign-in" onclick="openPopup()">Sign in</a>
+       <span class="header__login__hr"></span>
+       <a href="#" class="header__login__create-account" onclick="openPopup()">Create account</a>
+   </div>
+</header>
+<div class="create-route">
+      <h1 class="create-route__title wow animated fadeInUp" data-wow-delay=".5s">Plan your trip of your dreams</h1>
+      <p class="create-route__paragraph wow animated fadeInUp" data-wow-delay=".9s">Create your own routes, plan travel, share with your friends</p>
+      <a href="#" class="create-route__btn wow animated fadeInUp" data-wow-delay="1.2s">Create account</a>
+</div>
+<div class="full-width-container">
+ <div class="wrapper">
+  <div class="search-area">
+      <div class="search-area__item">
+          <input type="text" placeholder="Where your go" class="search-area__item__input"/>
+      </div>
+      <div class="search-area__item" ng-repeat="item in items">
+           <select class="search-area__item__dropdown">
+               <option class="search-area__item__dropdown__option" ng-repeat="i in item">{{i}}</option>
+           </select>
+      </div>
+      </div>
+  </div>
+  <input class="full-width-container--search-btn" type="submit" value=""/>
+</div>
+<div class="wrapper">
+        <div class="routes" ng-repeat="items in allroutes">
+        <h2 class="routes__title">{{items.title}}</h2>
+        <hr class="routes__hr"/>
+        <div class="routes__maps">
+        <div class="routes__maps__map" ng-repeat="item in items.routes">
+                <img src="{{item.img}}" class="routes__maps__map__img" />
+                <div class="routes__maps__map__details">
+                    <h3 class="routes__maps__map__details__title">{{item.title}}</h3>
+                    <p class="routes__maps__map__details__published">
+                       published:
+                        <span class="routes__maps__map__details__published__place">
+                            {{item.place}}
+                        </span>
+                    </p>
+                </div>
+                <hr class="routes__maps__map__hr"/>
+                <div class="routes__maps__map__social">
+                        <a href="#" class="routes__maps__map__social__like">{{item.likes}}</a>
+                        <a href="#" class="routes__maps__map__social__comment">{{item.coments}}</a>
+                         <a href="#" class="routes__maps__map__social__car">
+                          <img src="images/car.png"/>
+                        </a>
+                        <a href="#" class="routes__maps__map__social__share">
+                            <img src="images/share.png" />
+                        </a>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+</div>
+</body>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+
+  <!--Intialize--JS-->
+ <script src="assets/script.js"></script>
+ <script>
+     function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+     
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("box").style.display = "block";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closePopup() {    
+     document.getElementById("popup").style.display = "none";
+    document.getElementById("box").style.display = "none";
+}
+     
+    </script>
+ <script src="assets/scripts.js"></script>    
+</html>           
+                        
