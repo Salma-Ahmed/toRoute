@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    background: #f2f2f2;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border:0;
+    list-style: none;
+    text-decoration: none;
+}
+.full-width-container{
+    box-shadow: 0px 3px 2px 0px #e5e5e5;
+    padding: 5px 0px 24px 0px;
+    display: inline-block;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    @media(min-width: $break-medium) and (max-width: $break-large){
+           padding: 5px 0px 50px 0px;
+        }
+     @media (max-width: $break-small){
+           padding: 5px 0px 60px 0px;
+        }
+    &--search-btn{
+        position: absolute;
+        right: 5%;
+        bottom: -30px;
+        background: url(../images/material-btn.png) no-repeat;
+        width: 72px;
+        height: 72px;
+        cursor: pointer;
+       
+        @media (max-width: $break-large2){
+            right: 0;
+        }
+    }
+}
+.wrapper{
+    width:78%;
+    margin: 0 auto;
+    @media(min-width:$break-medium) and (max-width: $break-large){
+        width:740px;
+    }
+    @media (max-width: $break-medium){
+        width:90%;
+    }
+}
+::-webkit-input-placeholder {
+    color: $input-select;
+    font-size: 13px;
+   
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: $input-select;
+    font-size: 13px;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $input-select;
+    font-size: 13px;
+}
+
+:-ms-input-placeholder {
+    color: $input-select;
+    font-size: 13px;
+}

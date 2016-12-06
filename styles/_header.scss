@@ -1,0 +1,75 @@
+.header{
+    background: $menu-bg;
+    padding: 0px 21px 0px 23px;
+    height: 64px;
+    line-height: 64px;
+    position: relative;
+    @media (max-width: $break-medium){
+          height: 100px;
+          line-height: 135px;
+       }
+    @media (max-width: $break-small){
+          padding: 0px 10px;
+       }
+    &__nav-btn{
+        @media (max-width: $break-medium) {
+       }
+    }
+     &__search-btn{
+         margin-left: 26px;
+         @media  (max-width: $break-medium) {
+          margin-left: 10px;
+       }
+    }
+   
+    &__logo{
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       margin: -15px 0px 0px -46px;
+        @media (min-width: $break-medium) and (max-width: $break-large) {
+          left:40%;
+       }
+         @media (max-width: $break-medium) {
+          top:15px;
+          margin: 0px 0px 0px -46px;
+       }
+    }
+    &__login{
+        float: right;
+        font-family: 'robotoregular';
+        font-weight: bold;
+        height: 100%;
+        &__create-account{
+            color: #d0c8e3;
+            font-size: 13px;
+            background: #5932a8;
+            padding: 12px 44px;
+            border-radius: 4px;
+            @media  (max-width: $break-medium) {
+                padding: 12px 10px 12px 10px;
+                font-size: 12px;
+           }
+        }
+        &__hr{
+            background: #7349bf;
+            width:1px;
+            height: 30px;
+            display: inline-block;
+            margin: 0px 24px;
+            vertical-align: middle;
+            @media (max-width: $break-medium){
+                margin: 0px 7px;
+            }
+        }
+        &__sign-in{
+            color: #fff;
+            background: url(../images/sign-in-bg.png) left center no-repeat;
+            padding-left: 20px;
+            @media (max-width: $break-medium){
+                font-size: 13px;
+            }
+        }
+    }
+}
+ 

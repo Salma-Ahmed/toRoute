@@ -1,0 +1,44 @@
+.create-route {
+        background-image: url("../images/main-img.png");
+        min-height: 256px; 
+        text-align: center;
+        text-transform: uppercase;
+    &__title{
+        font-family: $thin;
+        font-size: 33px;
+        text-shadow: #919293 1px 1px;
+        padding: 50px 0px 15px 0px;
+         color: #fff;
+        @media(max-width: $break-medium){
+            padding: 40px 0px 15px 0px;
+        }
+        @media(max-width: $break-small){
+             font-size: 29px;
+             padding: 40px 0px 10px 0px;
+        }
+    }
+    &__paragraph{
+        font-family: $regular;
+        font-size: 13px;
+        color: #767677;
+        margin-bottom: 40px;
+         @media(max-width: $break-medium){
+            margin-bottom: 30px;
+        }
+         @media(max-width: $break-small){
+             font-size: 12px;
+        }
+    }
+    &__btn{
+        font-family: $regular;       
+        font-size: 14px;
+        background: $red-btns-color;
+        padding: 12px 40px 17px 40px;
+        display: inline-block;
+        color: #fff;
+        @media(max-width: $break-small){
+             font-size: 13px;
+             padding: 10px 35px 15px 35px;
+        }
+    }
+}      
