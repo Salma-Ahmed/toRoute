@@ -48,26 +48,26 @@ gulp.task('js', function() {
   .pipe(gulp.dest(outputDir))
   .pipe(connect.reload())
 });
-
+gulp.task('angular', function () {
+        gulp.src( jsSourcesAng)
+        .pipe(ngmin({dynamic: true}))
+        .pipe(gulp.dest('assets'))
+        .pipe(connect.reload());
+});
 gulp.task('watch', function() {
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(jsSources, ['js']);
   gulp.watch(sassSources, ['sass']);
-  gulp.watch(htmlSources, ['html']);   
+  gulp.watch(jsSourcesAng, ['angular']);      
+  gulp.watch(htmlSources, ['html']);        
 });
-gulp.task('angular', function () {
-    return gulp.src( jsSourcesAng)
-        .pipe(ngmin({dynamic: true}))
-        .pipe(gulp.dest(outputDir));
-});
+
 gulp.task('connect', function() {
   connect.server({
     root: '.',
     livereload: true
   })    
 });
-
-
 gulp.task('html', function() {
   gulp.src(htmlSources)
   .pipe(connect.reload())
