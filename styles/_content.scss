@@ -3,6 +3,9 @@
     font-family:$regular;
     display: inline-block;
     width: 100%;
+    @media(max-width: $break-medium){
+        margin-top: 60px;
+    }
     &__title{
         color: #333;
         font-size: 20px;

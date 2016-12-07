@@ -1,14 +1,26 @@
 body{
     margin: 0;
     background: #f2f2f2;
+    overflow-x: hidden;
 }
 *{
     margin: 0;
-    padding: 0;
+    padding: 0;   
     outline: none;
     border:0;
     list-style: none;
     text-decoration: none;
+}
+.loader{
+    text-align: center;
+    &__icon{
+        position: absolute;
+        margin-top: 15px;
+        color: #673ab7;
+        font-weight: bold !important;
+        font-size: 25px !important;
+    }
+    
 }
 .full-width-container{
     box-shadow: 0px 3px 2px 0px #e5e5e5;
@@ -31,6 +43,12 @@ body{
         width: 72px;
         height: 72px;
         cursor: pointer;
+         &:hover{
+                -ms-transform: rotate(360deg); /* IE 9 */
+                -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+                transform: rotate(360deg);
+                transition: all 1s ease;
+            }
        
         @media (max-width: $break-large2){
             right: 0;
@@ -69,3 +87,4 @@ body{
     color: $input-select;
     font-size: 13px;
 }
+
