@@ -93,11 +93,15 @@
                     background: url(../assets/images/comment.png) left 75% no-repeat;
                     padding-left: 16px;
                     margin-right: 17%;
+                    @media(max-width: 1300px){
+                        padding-left: 14px;
+                        margin-right: 9%;
+                    }
                 }
                 &__car,&__share{
                     padding: 11px 0px;
                     display: inline-block;
-                    width: 20%;
+                    width: 19%;
                     text-align: center;
                 }
                  &__car{

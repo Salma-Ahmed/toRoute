@@ -2722,10 +2722,14 @@ body {
         background: url(../assets/images/comment.png) left 75% no-repeat;
         padding-left: 16px;
         margin-right: 17%; }
+        @media (max-width: 1300px) {
+          .routes__maps__map__social__comment {
+            padding-left: 14px;
+            margin-right: 9%; } }
       .routes__maps__map__social__car, .routes__maps__map__social__share {
         padding: 11px 0px;
         display: inline-block;
-        width: 20%;
+        width: 19%;
         text-align: center; }
       .routes__maps__map__social__car {
         border-right: 1px solid #e0e0e0;
