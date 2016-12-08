@@ -4,6 +4,7 @@
     "gulp-coffee": "^2.3.3",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
+    "gulp-imagemin": "^3.1.1",
     "gulp-ngmin": "^0.3.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",

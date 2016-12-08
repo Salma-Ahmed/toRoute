@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    ngmin = require('gulp-ngmin');
+    ngmin = require('gulp-ngmin'),
+    imagemin = require('gulp-imagemin');
  
 
 
@@ -13,6 +14,7 @@ var coffeeSources = ['scripts/hello.coffee'],
     jsSources = ['scripts/*.js'],
     jsSourcesAng = ['scriptsAng/*.js'],
     sassSources = ['styles/*.scss'],
+    imgSources = ['images/*'],
     htmlSources = ['**/*.html'],
     outputDir = 'assets';
 
@@ -21,10 +23,10 @@ gulp.task('log', function() {
   gutil.log('== My First Task ==')
 });
 
-gulp.task('copy', function() {
+/*gulp.task('copy', function() {
   gulp.src('index.html')
   .pipe(gulp.dest(outputDir))
-});
+});*/
 
 gulp.task('sass', function() {
   gulp.src(sassSources)
@@ -54,23 +56,34 @@ gulp.task('angular', function () {
         .pipe(gulp.dest('assets'))
         .pipe(connect.reload());
 });
-gulp.task('watch', function() {
-  gulp.watch(coffeeSources, ['coffee']);
-  gulp.watch(jsSources, ['js']);
-  gulp.watch(sassSources, ['sass']);
-  gulp.watch(jsSourcesAng, ['angular']);      
-  gulp.watch(htmlSources, ['html']);        
-});
+gulp.task('compress', () =>
+    gulp.src(imgSources)
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets/images'))
+);
 
-gulp.task('connect', function() {
-  connect.server({
-    root: '.',
-    livereload: true
-  })    
-});
 gulp.task('html', function() {
   gulp.src(htmlSources)
   .pipe(connect.reload())
 });
 
-gulp.task('default', ['html','copy', 'coffee', 'js', 'sass','angular', 'connect', 'watch']);
+gulp.task('connect', function() {    
+  connect.server({
+    root: '.',
+    livereload: true
+  })    
+});
+
+gulp.task('watch', function() {
+  gulp.watch(coffeeSources, ['coffee']);
+  gulp.watch(jsSources, ['js']);
+  gulp.watch(sassSources, ['sass']);
+  gulp.watch(jsSourcesAng, ['angular']);      
+  gulp.watch(imgSources, ['compress']);      
+  gulp.watch(htmlSources, ['html']);        
+});
+
+
+
+
+gulp.task('default', ['html','coffee', 'js','compress', 'sass','angular', 'connect', 'watch']);

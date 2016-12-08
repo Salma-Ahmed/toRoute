@@ -6,7 +6,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/main.css">
+   <link rel="stylesheet" href="assets/main.css">
+   <link rel="stylesheet" href="assets/main.css">
+   
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 </head>
@@ -37,13 +39,13 @@
 <!--End-SignIn-Login-Model-->
 <header class="header">     
    <a href="#" class="header__nav-btn" onclick="openNav()">
-       <img src="images/nav-btn.png" class="header__nav-btn__img"/>
+       <img src="assets/images/nav-btn.png" class="header__nav-btn__img"/>
     </a>
    <a href="#" class="header__search-btn">
         <input type="text" class="header__search-btn__input" />
-        <img src="images/menu-search-btn.png" class="header__search-btn__img"/>
+        <img src="assets/images/menu-search-btn.png" class="header__search-btn__img"/>
    </a>
-   <img src="images/logo.png" class="header__logo animated rotateIn wow"/>
+   <img src="assets/images/logo.png" class="header__logo animated rotateIn wow"/>
    <div class="header__login">
        <a href="#" class="header__login__sign-in" onclick="openPopup()">Sign in</a>
        <span class="header__login__hr"></span>
@@ -60,7 +62,7 @@
   <div class="search-area">
       <div class="search-area__item">
           <input type="text" placeholder="Where your go" class="search-area__item__input" />
-<!--          <img src="images/material-btn.png" class="class"/>-->
+<!--          <img src="assets/images/material-btn.png" class="class"/>-->
       </div>
       <div class="search-area__item" ng-repeat="item in items">
            <select class="search-area__item__dropdown">
@@ -95,10 +97,10 @@
                         <a href="#" class="routes__maps__map__social__like">{{item.likes}}</a>
                         <a href="#" class="routes__maps__map__social__comment">{{item.coments}}</a>
                          <a href="#" class="routes__maps__map__social__car">
-                          <img src="images/car.png"/>
+                          <img src="assets/images/car.png"/>
                         </a>
                         <a href="#" class="routes__maps__map__social__share">
-                            <img src="images/share.png" />
+                            <img src="assets/images/share.png" />
                         </a>
                 </div>      
                 
